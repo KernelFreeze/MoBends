@@ -1,0 +1,10 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "goblinbob.mobends.mixin",
+  "mixins": [
+  ],
+  "client": [
+    "MixinModelBox"
+  ],
+  "server": []
+}

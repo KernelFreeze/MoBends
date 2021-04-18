@@ -57,7 +57,7 @@ public class AnimationLoader
         else
         {
             KeyframeAnimation animation = null;
-            if (location.getResourcePath().endsWith(".json"))
+            if (location.getPath().endsWith(".json"))
             {
                 animation = (new Gson()).fromJson(new InputStreamReader(stream), KeyframeAnimation.class);
             }

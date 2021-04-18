@@ -79,8 +79,8 @@ public class ModConfig
 
     private static boolean checkForPatterns(ResourceLocation resourceLocation, String[] patterns)
     {
-        final String resourceDomain = resourceLocation.getResourceDomain();
-        final String resourcePath = resourceLocation.getResourcePath();
+        final String resourceDomain = resourceLocation.getNamespace();
+        final String resourcePath = resourceLocation.getPath();
 
         for (String pattern : patterns)
         {
@@ -89,10 +89,10 @@ public class ModConfig
             if (resourceLocation == patternLocation)
                 return true;
 
-            if (!childWildcard(resourceDomain, patternLocation.getResourceDomain()))
+            if (!childWildcard(resourceDomain, patternLocation.getNamespace()))
                 continue;
 
-            if (childWildcard(resourcePath, patternLocation.getResourcePath()))
+            if (childWildcard(resourcePath, patternLocation.getPath()))
                 return true;
         }
 

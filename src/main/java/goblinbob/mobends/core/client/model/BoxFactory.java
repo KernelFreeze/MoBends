@@ -110,7 +110,7 @@ public class BoxFactory
 		this(min.getX(), min.getY(), min.getZ(), max.getX(), max.getY(), max.getZ(), faces);
 	}
 	
-	BoxFactory setTarget(ModelPart target)
+	public BoxFactory setTarget(ModelPart target)
 	{
 		this.target = target;
 		
@@ -233,18 +233,16 @@ public class BoxFactory
 		this.max.add(x, y, z);
 		return this;
 	}
-	
-	public MutatedBox create()
-	{
-		MutatedBox box = new MutatedBox(this.target, this.min, this.max, this.faces, this.faceVisibilityFlag);
+
+	public MutatedBox create() {
+		MutatedBox box = new MutatedBox(this.target, this.textureU, this.textureV, this.faces, this.faceVisibilityFlag, this.min, this.max);
 		if (this.target != null)
 			this.target.addBox(box);
 		return box;
 	}
-	
-	public MutatedBox create(ModelRenderer renderer)
-	{
-		return new MutatedBox(renderer, this.min, this.max, this.faces, this.faceVisibilityFlag);
+
+	public MutatedBox create(ModelRenderer renderer) {
+		return new MutatedBox(renderer, this.textureU, this.textureV, this.faces, this.faceVisibilityFlag, this.min, this.max);
 	}
 	
 	private void generateTextureFaces()

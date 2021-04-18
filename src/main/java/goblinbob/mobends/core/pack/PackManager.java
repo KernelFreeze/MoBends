@@ -33,7 +33,7 @@ public class PackManager
 
     public void initialize(CoreClientConfig config)
     {
-        localDirectory = new File(Minecraft.getMinecraft().mcDataDir, "bendspacks");
+        localDirectory = new File(Minecraft.getMinecraft().gameDir, "bendspacks");
         localDirectory.mkdir();
 
         cache = new PackCache(new File(localDirectory, "public_cache"));

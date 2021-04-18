@@ -99,7 +99,7 @@ public class ModelUtils
 
     public static Collection<ModelRenderer> getParentsList(ModelRenderer partIn, Collection<ModelRenderer> possibleParents)
     {
-        return getParentsList(partIn, possibleParents, new ArrayList<ModelRenderer>());
+        return getParentsList(partIn, possibleParents, new ArrayList<>());
     }
 
     public static Vector3f getGlobalOrigin(ModelRenderer partIn, Collection<ModelRenderer> possibleParents)
